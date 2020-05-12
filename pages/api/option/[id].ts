@@ -29,6 +29,5 @@ export default async (req, res) => {
     strikePrice,
     askPrice,
     expireDate,
-
   })
 }
