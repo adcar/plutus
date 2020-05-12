@@ -10,19 +10,31 @@ export default async (req, res) => {
   const root: any = parse(text);
 
   const tables = root.querySelectorAll("#quote-summary table tbody");
+
   const strikePrice = tables[0].childNodes[4].childNodes[1].childNodes[0].innerHTML;
   const askPrice =  tables[0].childNodes[3].childNodes[1].childNodes[0].innerHTML;
   const expireDateHumanReadable =  tables[1].childNodes[0].childNodes[1].childNodes[0].innerHTML;
 
   const expireDate = Math.round((new Date(`${expireDateHumanReadable} GMT`)).getTime() / 1000);
 
+  let type;
 
+  const heading = root.querySelector("h1").innerHTML;
+ if (heading.includes("put")) {
+   type = "put"
+ } else if (heading.includes("call")) {
+   type = "call";
+ } else {
+   type = "unknown";
+ }
 
   res.statusCode = 200
   res.json({
+    type,
     strikePrice,
     askPrice,
-    expireDate
+    expireDate,
+
   })
 
 
