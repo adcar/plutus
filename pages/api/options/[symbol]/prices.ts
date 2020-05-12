@@ -21,13 +21,17 @@ function parseRows(rows) {
 
 export default async (req, res) => {
   const {symbol, date} = req.query;
+  if (date === undefined) {
+    res.statusCode = 400;
+    res.json({
+      error: "date parameter is required"
+    })
+  }
+
   const response = await fetch(`https://finance.yahoo.com/quote/${symbol}/options?date=${date}`);
   const text = await response.text()
-  const root = parse(text);
-
-  // @ts-ignore
+  const root: any = parse(text);
   const calls = root.querySelectorAll("table.calls tr");
-  // @ts-ignore
   const puts = root.querySelectorAll("table.puts tr");
   res.statusCode = 200
   res.json({
