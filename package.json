@@ -20,7 +20,8 @@
     "node-html-parser": "^1.2.16",
     "qs": "^6.9.4",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "swr": "^0.2.0"
   },
   "devDependencies": {
     "@types/node": "^13.13.5",

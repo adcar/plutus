@@ -1,6 +1,4 @@
 import { initAuth0 } from '@auth0/nextjs-auth0';
-const cryptoRandomString = require('crypto-random-string');
-
 export default initAuth0({
   domain: 'dev-624rasw3.auth0.com',
   clientId: 'tIMRXlqT4j8YLNGRG0yGAbKF3udf53L1',
@@ -9,11 +7,14 @@ export default initAuth0({
   redirectUri: 'http://localhost:3000/api/callback',
   postLogoutRedirectUri: 'http://localhost:3000/',
   session: {
+
     // The secret used to encrypt the cookie.
-    cookieSecret: cryptoRandomString({length: 32})
-  ,
-    // The cookie lifetime (expiration) in seconds. Set to 8 hours by default.
-    cookieLifetime: 60 * 60 * 8,
+    cookieSecret: process.env.COOKIE_SECRET,
+    // ~68 years
+    cookieLifetime: 2147483647,
+    storeIdToken: true,
+    storeAccessToken: true,
+    storeRefreshToken: true
 
   },
 });
