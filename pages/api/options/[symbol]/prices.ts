@@ -43,7 +43,4 @@ export default async (req, res) => {
     puts: parseRows(puts)
   })
 
-
-
-
 }
