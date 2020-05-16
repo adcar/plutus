@@ -5,7 +5,7 @@ export default function DashBoard(props) {
   return (
     <div
       style={{
-        height: "100vh"
+        display: "flex"
       }}
     >
       <Tabs currentPage="dashboard" />
