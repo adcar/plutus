@@ -1,0 +1,25 @@
+@use "colors" as colors;
+.root {
+  background-color: colors.$bar;
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 100vh;
+  img {
+    width: 100px;
+    height: auto;
+  }
+}
+
+.buttons {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  button {
+    height: 100px;
+    width:100%;
+
+  }
+}
