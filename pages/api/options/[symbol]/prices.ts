@@ -12,8 +12,12 @@ function parseRows(rows) {
     const id = row.childNodes[0].childNodes[0].innerHTML;
     const strike = row.childNodes[2].childNodes[0].innerHTML;
     const lastPrice = row.childNodes[3].innerHTML;
-    const askPrice = row.childNodes[3].innerHTML;
-    parsedRows.push({  id, strike, lastPrice, askPrice});
+    const bid = row.childNodes[4].innerHTML;
+    const ask = row.childNodes[5].innerHTML;
+    const change = row.childNodes[6].childNodes[0].innerHTML;
+    const volume = row.childNodes[8].innerHTML;
+    const impliedVolatility = row.childNodes[10].innerHTML;
+    parsedRows.push({  id, strike, lastPrice, bid, ask, change, volume, impliedVolatility});
   })
 
   return parsedRows;
