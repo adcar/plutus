@@ -3,6 +3,7 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import React from "react";
 import theme from "../theme";
+import "./app.scss";
 
 function MyApp({ Component, pageProps }) {
   React.useEffect(() => {
