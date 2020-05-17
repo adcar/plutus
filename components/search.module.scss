@@ -1,0 +1,26 @@
+@use "colors" as c;
+@use "vars" as vars;
+
+.form, .input {
+  width: 100%;
+
+}
+
+.form {
+  padding: vars.$spacing;
+}
+
+.input {
+  background-color: c.$surface;
+  height: 80px;
+  font-size: 1.3em;
+  border: none;
+  outline: none;
+  transition: vars.$trans;
+  color: c.$text;
+  border-radius: vars.$radius;
+  padding: vars.$spacing;
+  &:focus {
+    box-shadow: vars.$shadow;
+  }
+}

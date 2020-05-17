@@ -1,0 +1,32 @@
+@use "colors" as c;
+@use "vars" as vars;
+
+.react-autosuggest__input {
+  background-color: c.$surface;
+  width: 100%;
+  height: 80px;
+  padding: 10px 20px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  transition: vars.$trans;
+  color: c.$text;
+  &:focus {
+    box-shadow: vars.$shadow;
+  }
+}
+
+.react-autosuggest__container {
+  margin: 10px;
+  width: 100%;
+}
+
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}

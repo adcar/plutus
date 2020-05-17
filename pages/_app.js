@@ -4,6 +4,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import React from "react";
 import theme from "../theme";
 import "./app.scss";
+import "./autosuggest.scss";
 
 function MyApp({ Component, pageProps }) {
   React.useEffect(() => {

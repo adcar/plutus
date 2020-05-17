@@ -1,0 +1,14 @@
+@use "colors" as c;
+@use "vars" as vars;
+
+
+.root {
+  background-color: c.$surface;
+  margin: 40px;
+  border-radius: vars.$radius;
+  padding: vars.$spacing;
+  cursor: pointer;
+  &:hover {
+    box-shadow: vars.$shadow;
+  }
+}
