@@ -36,7 +36,7 @@ export default function Tabs({ currentPage }: IProps) {
     <div className={styles.root}>
       <img
         src={
-          "https://lh3.googleusercontent.com/proxy/mdrER7gpHRg7DAj8ySS-yvlnJslI-EF5Vhoz6WgxJfoMqvTO_pJf_BAvcxp5TgSvIUH6SOXp_Tze4zllwC0Oui9NLEndIAn5Ty67cndDfs1G-dme7zpeNcTITmqIsw"
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flash_and_circle.svg/1024px-Flash_and_circle.svg.png"
         }
         alt={"Logo"}
       />
