@@ -52,11 +52,12 @@ export default function Details({ title, prevPrice, price }) {
             style={{ ...priceStyle, marginLeft: 10 }}
           >
             {" "}
-            {sign}${changeValue}
+            {sign}
+            {changeValue}
           </Typography>{" "}
           <Typography component="span" style={priceStyle}>
-            {sign}
-            {changePercent}%
+            ({sign}
+            {changePercent}%)
           </Typography>
         </Typography>
       </div>
