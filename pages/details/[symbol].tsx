@@ -3,17 +3,20 @@ import React from "react";
 import Tabs from "../../components/Tabs";
 import Typography from "@material-ui/core/Typography";
 import getTitleAtUrl from "get-title-at-url";
+import { useTheme } from "@material-ui/core";
 
 function round(num) {
   return Math.ceil(num * 100) / 100;
 }
 
 export default function Details({ title, prevPrice, price }) {
+  const theme = useTheme();
   const changeValue = round(price - prevPrice);
   const changePercent = round((changeValue / price) * 100);
 
   const priceStyle = {
-    color: changeValue > 0 ? "green" : "red"
+    color: changeValue > 0 ? theme.palette.primary.main : "red",
+    padding: 5
   };
 
   let sign = "";
@@ -36,16 +39,25 @@ export default function Details({ title, prevPrice, price }) {
         }}
       >
         <Typography variant={"h3"}>{title}</Typography>
-        <Typography variant={"h4"}>
+        <Typography
+          variant={"h4"}
+          style={{
+            ...priceStyle,
+            display: "inline-flex"
+          }}
+        >
           ${price}{" "}
-          <span style={priceStyle}>
+          <Typography
+            component="span"
+            style={{ ...priceStyle, marginLeft: 10 }}
+          >
             {" "}
             {sign}${changeValue}
-          </span>{" "}
-          <span style={priceStyle}>
+          </Typography>{" "}
+          <Typography component="span" style={priceStyle}>
             {sign}
             {changePercent}%
-          </span>
+          </Typography>
         </Typography>
       </div>
     </div>
