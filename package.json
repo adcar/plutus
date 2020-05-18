@@ -15,6 +15,7 @@
     "cheerio": "^1.0.0-rc.3",
     "crypto-random-string": "^3.2.0",
     "execution-time": "^1.4.1",
+    "get-title-at-url": "^1.1.8",
     "intrinio-sdk": "^5.5.0",
     "jsdom": "^16.2.2",
     "next": "9.4.0",
