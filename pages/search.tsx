@@ -2,7 +2,7 @@ import React from "react";
 import Tabs from "../components/Tabs";
 import Search from "../components/Search";
 import Results from "../components/Results";
-export default function search() {
+export default function search({ query }) {
   return (
     <div
       style={{
@@ -19,9 +19,15 @@ export default function search() {
           width: "100%"
         }}
       >
-        <Search />
+        <Search query={query.q} />
         <Results />
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps({ query }) {
+  return {
+    props: { query } // will be passed to the page component as props
+  };
 }

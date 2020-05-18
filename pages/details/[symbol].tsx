@@ -23,19 +23,18 @@ export default function Details({ title, prevPrice, price }) {
   if (changeValue > 0) {
     sign = "+";
   }
-
-  console.log({ changeValue, changePercent });
   return (
     <div
       style={{
         display: "flex"
       }}
     >
-      <Tabs currentPage="dashboard" />
+      <Tabs currentPage="search" />
       <div
         style={{
           display: "flex",
-          flexDirection: "column"
+          flexDirection: "column",
+          padding: 20
         }}
       >
         <Typography variant={"h3"}>{title}</Typography>
@@ -69,7 +68,6 @@ function getTitle(url: string): Promise<string> {
 }
 
 export async function getServerSideProps({ query }) {
-  console.log(query);
   const res = await fetch(
     `https://query1.finance.yahoo.com/v8/finance/chart/${query.symbol}`
   );

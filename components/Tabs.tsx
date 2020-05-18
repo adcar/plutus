@@ -34,12 +34,7 @@ export default function Tabs({ currentPage }: IProps) {
   const theme = useTheme();
   return (
     <div className={styles.root}>
-      <img
-        src={
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flash_and_circle.svg/1024px-Flash_and_circle.svg.png"
-        }
-        alt={"Logo"}
-      />
+      <img src={"https://via.placeholder.com/80x80"} alt={"Logo"} />
 
       <div className={styles.buttons}>
         <div style={{ display: "flex", flexDirection: "row" }}>

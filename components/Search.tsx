@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "./search.module.scss";
 
-export default function Search() {
+export default function Search({ query }) {
   const router = useRouter();
-  const [value, setValue] = useState(router.query.q);
+  const [value, setValue] = useState(query);
+
   return (
     <form
       className={styles.form}

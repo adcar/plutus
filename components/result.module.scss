@@ -8,7 +8,8 @@
   border-radius: vars.$radius;
   padding: vars.$spacing;
   cursor: pointer;
-  &:hover {
+  &:hover, &:focus {
+    outline: none;
     box-shadow: vars.$shadow;
   }
 }
